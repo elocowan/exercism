@@ -9,45 +9,30 @@
 
 // input: color
 // output: numerical value of that band
-// constraints
-// edge cases: capitalization
+// constraints: what type of data structure will contain the colors?
+// edge cases: capitalization?
+
+// original solution used an object of colors, not an array
 
 // if no color is specified, return the keys of the Colors object so user can see what their choices are
 
-// define COLORS as an object full of color keys with associated values
-
-// PseudoCode
+// PseudoCode for Object Solution
 // if COLORS[color] is truthy
   // return COLORS[color]
 // return Object.keys(COLORS), (maybe with a message that these are the available colors)
 
 // samples:
-// colorCode("Green") --> 5
+// colorCode("green") --> 5
 // colorCode() --> array of colors
 // colorCode("Maroon") --> array of colors
 
-// export
-const colorCode = (color) => {
-  if (COLORS[color]) {
-    return COLORS[color];
+// changed code to use an array of colors to match the pre-written tests
+
+export const colorCode = (color) => {
+  if (COLORS.indexOf(color) !== -1) {
+    return COLORS.indexOf(color);
   }
-  return Object.keys(COLORS);
+  return `choose a color from the following list: ${COLORS}`
 };
 
-// export
-const COLORS = {
-  Black: 0,
-  Brown: 1,
-  Red: 2,
-  Orange: 3,
-  Yellow: 4,
-  Green: 5,
-  Blue: 6,
-  Violet: 7,
-  Grey: 8,
-  White: 9
-};
-
-console.log(colorCode("Green"));
-console.log(colorCode());
-console.log(colorCode("Maroon"));
+export const COLORS = ["black","brown","red","orange","yellow","green","blue","violet","grey","white"]
