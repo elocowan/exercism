@@ -1,5 +1,3 @@
-
-
 export const compute = (left, right) => {
   if (!left.length && !right.length) {
     return 0;
@@ -18,10 +16,12 @@ export const compute = (left, right) => {
   }
 
   let hamming = 0;
+
   for(let i = 0; i < left.length; i++) {
     if (left[i] !== right[i]) {
       hamming++;
     }
   }
+
   return hamming;
 };
